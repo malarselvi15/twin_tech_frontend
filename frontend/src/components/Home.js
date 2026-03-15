@@ -2,8 +2,17 @@ import React from "react";
 import bgImage from "../assets/home-bg.jpeg";
 
 const Home = () => {
+
+  const goToServices = () => {
+    const section = document.getElementById("services");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
+      id="home"
       className="home"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
@@ -30,7 +39,7 @@ const Home = () => {
           digital solutions for modern businesses.
         </p>
 
-        <button className="hero-btn">
+        <button className="hero-btn" onClick={goToServices}>
           Explore Our Services
         </button>
       </div>
